@@ -118,8 +118,9 @@ class Buzzer:
 
     def __init__(self, pin : int) -> None:
         self.pin = pin
-        self.buzz = GPIO.PWM(self.pin, 440)
         GPIO.setup(pin, GPIO.OUT)
+        self.buzz = GPIO.PWM(self.pin, 440)
+        
 
     def start(self, value: int):
         self.buzz.start(value)
